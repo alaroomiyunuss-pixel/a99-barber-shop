@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>A99 Barber Shop – Haarlem, Nederland</title>
+<meta name="description" content="A99 Barber Shop in Haarlem. Premium kapper voor heren. Online afspraak maken."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <img src="logo.png" alt="A99" class="loader-logo"/>
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+    <p class="loader-text">A99 BARBER SHOP</p>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="logo.png" alt="A99 Barber Shop"/>
+      <span>A99 <span class="gold">BARBER</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="closeMenu()" data-nl="Home" data-ar="الرئيسية">Home</a></li>
+      <li><a href="#services" onclick="closeMenu()" data-nl="Diensten" data-ar="الخدمات">Diensten</a></li>
+      <li><a href="#gallery" onclick="closeMenu()" data-nl="Galerij" data-ar="المعرض">Galerij</a></li>
+      <li><a href="#testimonials" onclick="closeMenu()" data-nl="Reviews" data-ar="آراء العملاء">Reviews</a></li>
+      <li><a href="#contact" onclick="closeMenu()" data-nl="Contact" data-ar="تواصل">Contact</a></li>
+      <li><a href="#booking" class="nav-book-btn" onclick="closeMenu()" data-nl="✂ Afspraak" data-ar="✂ احجز موعد">✂ Afspraak</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" id="langBtn" onclick="toggleLang()">🌐 AR</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <img src="shop1.png" alt="A99 Barber Shop"/>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge" data-nl="✦ Haarlem, Nederland ✦" data-ar="✦ هارلم، هولندا ✦">✦ Haarlem, Nederland ✦</div>
+    <h1>A99 <span class="gold">BARBER</span><br/>SHOP</h1>
+    <p class="hero-subtitle" data-nl="Premium kapperservaring in het hart van Haarlem" data-ar="تجربة حلاقة فاخرة في قلب هارلم">Premium kapperservaring in het hart van Haarlem</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary" data-nl="✂ Afspraak Maken" data-ar="✂ احجز موعدك الآن">✂ Afspraak Maken</a>
+      <a href="#services" class="btn-outline" data-nl="Onze Diensten" data-ar="خدماتنا">Onze Diensten</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">+2K</span><span class="stat-label" data-nl="Tevreden klanten" data-ar="عميل راضٍ">Tevreden klanten</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">5+</span><span class="stat-label" data-nl="Jaar ervaring" data-ar="سنوات خبرة">Jaar ervaring</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><span class="stat-num">10+</span><span class="stat-label" data-nl="Diensten" data-ar="خدمة">Diensten</span></div>
+    </div>
+  </div>
+  <!-- HERO BOOKING CARD -->
+  <div class="hero-book-card">
+    <div class="hero-book-title" data-nl="Direct Afspraak Maken" data-ar="احجز موعداً الآن">Direct Afspraak Maken</div>
+    <form class="hero-book-form" onsubmit="quickBook(event)">
+      <input type="text" id="qName" placeholder="Naam / الاسم" required/>
+      <input type="tel" id="qPhone" placeholder="Telefoon / الهاتف" required/>
+      <select id="qService">
+        <option value="haircut" data-nl="Knippen" data-ar="قص الشعر">Knippen</option>
+        <option value="beard" data-nl="Baard trimmen" data-ar="حلاقة اللحية">Baard trimmen</option>
+        <option value="vip" data-nl="VIP Pakket" data-ar="باقة VIP">VIP Pakket</option>
+        <option value="color" data-nl="Kleuren" data-ar="صبغ الشعر">Kleuren</option>
+      </select>
+      <input type="date" id="qDate" required/>
+      <button type="submit" data-nl="Bevestig →" data-ar="أكد الحجز →">Bevestig →</button>
+    </form>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-nl="Onze Diensten" data-ar="خدماتنا">Onze Diensten</span>
+      <h2 data-nl="Alles wat je nodig hebt" data-ar="كل ما تحتاجه في مكان واحد">Alles wat je nodig hebt</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" data-aos>
+        <div class="service-icon">✂</div>
+        <h3 data-nl="Knippen" data-ar="قص الشعر">Knippen</h3>
+        <p data-nl="Stijlvolle haarsnit met de nieuwste trends" data-ar="قص احترافي بأحدث الموضات">Stijlvolle haarsnit met de nieuwste trends</p>
+        <div class="service-price">€18</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+      <div class="service-card featured" data-aos>
+        <div class="service-badge" data-nl="Populair" data-ar="الأكثر طلباً">Populair</div>
+        <div class="service-icon">🪒</div>
+        <h3 data-nl="Baard Trimmen" data-ar="حلاقة اللحية">Baard Trimmen</h3>
+        <p data-nl="Professioneel baard stylen en scheren" data-ar="تشكيل وتهذيب اللحية باحترافية">Professioneel baard stylen en scheren</p>
+        <div class="service-price">€15</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+      <div class="service-card" data-aos>
+        <div class="service-icon">👑</div>
+        <h3 data-nl="VIP Pakket" data-ar="باقة VIP الكاملة">VIP Pakket</h3>
+        <p data-nl="Knippen + Baard + Hoofdmassage – totale verwennerij" data-ar="قص + لحية + مساج – تجربة ملكية">Knippen + Baard + Hoofdmassage – totale verwennerij</p>
+        <div class="service-price">€55</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+      <div class="service-card" data-aos>
+        <div class="service-icon">💆</div>
+        <h3 data-nl="Hoofdmassage" data-ar="مساج الرأس">Hoofdmassage</h3>
+        <p data-nl="Ontspannende hoofdmassage met natuurlijke oliën" data-ar="استرخاء تام مع مساج الرأس بالزيوت">Ontspannende hoofdmassage met natuurlijke oliën</p>
+        <div class="service-price">€20</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+      <div class="service-card" data-aos>
+        <div class="service-icon">🎨</div>
+        <h3 data-nl="Kleuren" data-ar="صبغ الشعر">Kleuren</h3>
+        <p data-nl="Moderne kleurtechnieken voor een unieke look" data-ar="ألوان عصرية وتقنيات متطورة">Moderne kleurtechnieken voor een unieke look</p>
+        <div class="service-price">€35</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+      <div class="service-card" data-aos>
+        <div class="service-icon">✨</div>
+        <h3 data-nl="Huidverzorging" data-ar="عناية بالبشرة">Huidverzorging</h3>
+        <p data-nl="Dieptereiniging en hydratatie voor je gezicht" data-ar="تنظيف عميق وترطيب للوجه">Dieptereiniging en hydratatie voor je gezicht</p>
+        <div class="service-price">€25</div>
+        <a href="#booking" class="service-book" data-nl="Boeken" data-ar="احجز">Boeken</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-nl="Ons Werk" data-ar="معرض الأعمال">Ons Werk</span>
+      <h2 data-nl="Bekijk onze resultaten" data-ar="إبداعاتنا تتحدث عنها">Bekijk onze resultaten</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item g-large"><img src="shop1.png" alt="A99 Barber Interior"/><div class="gallery-overlay"><span data-nl="Premium Interieur" data-ar="ديكور فاخر">Premium Interieur</span></div></div>
+      <div class="gallery-item"><img src="haircut.png" alt="Haircut Result"/><div class="gallery-overlay"><span data-nl="Fade & Taper" data-ar="قصة الفيد">Fade & Taper</span></div></div>
+      <div class="gallery-item"><img src="shop2.png" alt="Barber Shop NL"/><div class="gallery-overlay"><span data-nl="Onze Zaak" data-ar="صالوننا">Onze Zaak</span></div></div>
+      <div class="gallery-item"><img src="beard.png" alt="Beard Trim"/><div class="gallery-overlay"><span data-nl="Baard Scheren" data-ar="حلاقة اللحية">Baard Scheren</span></div></div>
+      <div class="gallery-item g-wide"><img src="gallery3.png" alt="Premium Look"/><div class="gallery-overlay"><span data-nl="Premium Look" data-ar="إطلالة فاخرة">Premium Look</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-nl="Klantreviews" data-ar="آراء العملاء">Klantreviews</span>
+      <h2 data-nl="Wat onze klanten zeggen" data-ar="ماذا يقول عملاؤنا">Wat onze klanten zeggen</h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonial-card active">
+        <div class="stars">★★★★★</div>
+        <p data-nl='"Beste kapper in Haarlem! Super vriendelijk, scherp resultaat. Kom hier elke keer terug."' data-ar='"أفضل حلاق في هارلم! محترف جداً والنتيجة رائعة."'>"Beste kapper in Haarlem! Super vriendelijk, scherp resultaat."</p>
+        <div class="client-info"><span class="client-avatar">R</span><div><strong>Rachid B.</strong><span>Haarlem</span></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p data-nl='"A99 is geweldig! Elke keer weer perfect. De VIP behandeling is echt de moeite waard."' data-ar='"صالون A99 رائع! باقة VIP تستحق كل يورو."'>"A99 is geweldig! De VIP behandeling is echt de moeite waard."</p>
+        <div class="client-info"><span class="client-avatar">M</span><div><strong>Mohamed A.</strong><span>Amsterdam</span></div></div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p data-nl='"Topkapper! Altijd netjes en op tijd. Ik ga nergens anders meer naartoe."' data-ar='"حلاق ممتاز! دائماً في الموعد. لن أذهب لأي مكان آخر."'>"Topkapper! Altijd netjes en op tijd. Ik ga nergens anders meer naartoe."</p>
+        <div class="client-info"><span class="client-avatar">J</span><div><strong>Joris V.</strong><span>Haarlem</span></div></div>
+      </div>
+    </div>
+    <div class="slider-dots" id="sliderDots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="booking">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-nl="Online Boeken" data-ar="حجز موعد">Online Boeken</span>
+      <h2 data-nl="Maak een Afspraak" data-ar="احجز موعدك <span class='gold'>بسهولة</span>">Maak een <span class="gold">Afspraak</span></h2>
+    </div>
+    <div class="booking-wrapper">
+      <div class="booking-info">
+        <h3 data-nl="Informatie" data-ar="معلومات الحجز">Informatie</h3>
+        <div class="info-item"><span>⏰</span><div><strong data-nl="Openingstijden" data-ar="ساعات العمل">Openingstijden</strong><p data-nl="Ma–Za: 09:00–20:00" data-ar="الإثنين – السبت: 9:00 – 20:00">Ma–Za: 09:00–20:00</p><p data-nl="Zo: 10:00–17:00" data-ar="الأحد: 10:00 – 17:00">Zo: 10:00–17:00</p></div></div>
+        <div class="info-item"><span>📍</span><div><strong data-nl="Adres" data-ar="العنوان">Adres</strong><p>Rivièradreef 33B</p><p>2037 AD Haarlem</p></div></div>
+        <div class="info-item"><span>📞</span><div><strong data-nl="Telefoon" data-ar="الهاتف">Telefoon</strong><p>06 43281300</p></div></div>
+        <div class="info-item"><span>💬</span><div><strong>WhatsApp</strong><a href="https://wa.me/310643281300" class="whatsapp-btn" target="_blank" data-nl="Start gesprek" data-ar="ابدأ المحادثة">Start gesprek</a></div></div>
+      </div>
+      <form class="booking-form" id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-nl="Naam *" data-ar="الاسم الكامل *">Naam *</label>
+            <input type="text" id="fullName" required placeholder="Jouw naam"/>
+          </div>
+          <div class="form-group">
+            <label data-nl="Telefoon *" data-ar="رقم الهاتف *">Telefoon *</label>
+            <input type="tel" id="phone" required placeholder="06 ..."/>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-nl="Dienst *" data-ar="نوع الخدمة *">Dienst *</label>
+            <select id="service" required>
+              <option value="" data-nl="Kies dienst" data-ar="اختر الخدمة">Kies dienst</option>
+              <option value="haircut" data-nl="Knippen – €18" data-ar="قص الشعر – €18">Knippen – €18</option>
+              <option value="beard" data-nl="Baard – €15" data-ar="حلاقة اللحية – €15">Baard – €15</option>
+              <option value="vip" data-nl="VIP Pakket – €55" data-ar="باقة VIP – €55">VIP Pakket – €55</option>
+              <option value="massage" data-nl="Hoofdmassage – €20" data-ar="مساج الرأس – €20">Hoofdmassage – €20</option>
+              <option value="color" data-nl="Kleuren – €35" data-ar="صبغ الشعر – €35">Kleuren – €35</option>
+              <option value="skin" data-nl="Huidverzorging – €25" data-ar="عناية بالبشرة – €25">Huidverzorging – €25</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-nl="Datum *" data-ar="التاريخ *">Datum *</label>
+            <input type="date" id="bookDate" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-nl="Kies een tijd *" data-ar="اختر الوقت *">Kies een tijd *</label>
+          <div class="time-slots">
+            <button type="button" class="time-slot" onclick="selectTime(this,'09:00')">09:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'09:30')">09:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'10:00')">10:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'10:30')">10:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'11:00')">11:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'11:30')">11:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'13:00')">13:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'14:00')">14:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'14:30')">14:30</button>
+            <button type="button" class="time-slot booked" disabled>15:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'15:30')">15:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'16:00')">16:00</button>
+            <button type="button" class="time-slot booked" disabled>17:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'17:30')">17:30</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'18:00')">18:00</button>
+            <button type="button" class="time-slot" onclick="selectTime(this,'18:30')">18:30</button>
+          </div>
+          <input type="hidden" id="selectedTime"/>
+        </div>
+        <div class="form-group">
+          <label data-nl="Opmerkingen" data-ar="ملاحظات إضافية">Opmerkingen</label>
+          <textarea id="notes" rows="3" placeholder="Eventuele wensen..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" data-nl="Afspraak Bevestigen ✓" data-ar="تأكيد الحجز ✓">Afspraak Bevestigen ✓</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag" data-nl="Contact" data-ar="تواصل معنا">Contact</span>
+      <h2 data-nl="Kom langs of bel ons" data-ar="تواصل معنا">Kom langs of bel ons</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <h3 data-nl="Adres" data-ar="العنوان">Adres</h3>
+        <p>Rivièradreef 33B<br/>2037 AD Haarlem<br/>Nederland</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📞</div>
+        <h3 data-nl="Telefoon / WhatsApp" data-ar="الهاتف / واتساب">Telefoon / WhatsApp</h3>
+        <p>06 43281300</p>
+        <a href="https://wa.me/310643281300" class="whatsapp-btn" target="_blank">💬 WhatsApp</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">⏰</div>
+        <h3 data-nl="Openingstijden" data-ar="ساعات العمل">Openingstijden</h3>
+        <p data-nl="Ma–Za: 09:00–20:00<br/>Zondag: 10:00–17:00" data-ar="الإثنين–السبت: 9–20<br/>الأحد: 10–17">Ma–Za: 09:00–20:00<br/>Zondag: 10:00–17:00</p>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">🌐</div>
+        <h3 data-nl="Volg ons" data-ar="تابعنا">Volg ons</h3>
+        <div class="social-links">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Facebook</a>
+          <a href="#" class="social-link">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2453!2d4.6373!3d52.3874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDIzJzE0LjYiTiA0wrAzOCcxNC40IkU!5e0!3m2!1snl!2snl!4v1234" width="100%" height="320" style="border:0" allowfullscreen loading="lazy" title="A99 Barber Shop Haarlem"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.png" alt="A99"/>
+        <h3>A99 BARBER SHOP</h3>
+        <p data-nl="Premium kapper in Haarlem. Kwaliteit en stijl voor elke man." data-ar="حلاق فاخر في هارلم. جودة وأناقة لكل رجل.">Premium kapper in Haarlem. Kwaliteit en stijl voor elke man.</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-nl="Links" data-ar="روابط">Links</h4>
+        <ul>
+          <li><a href="#home" data-nl="Home" data-ar="الرئيسية">Home</a></li>
+          <li><a href="#services" data-nl="Diensten" data-ar="الخدمات">Diensten</a></li>
+          <li><a href="#gallery" data-nl="Galerij" data-ar="المعرض">Galerij</a></li>
+          <li><a href="#booking" data-nl="Afspraak" data-ar="حجز موعد">Afspraak</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-nl="Contact" data-ar="تواصل">Contact</h4>
+        <p>📍 Rivièradreef 33B, 2037 AD Haarlem</p>
+        <p>📞 06 43281300</p>
+        <a href="https://wa.me/310643281300" class="footer-whatsapp" target="_blank">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 A99 Barber Shop – Haarlem, Nederland</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div id="successModal" class="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-content">
+    <div class="modal-icon">✅</div>
+    <h3 id="modalTitle">Afspraak bevestigd!</h3>
+    <p id="modalMessage"></p>
+    <button onclick="closeModal()" class="btn-primary">OK</button>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/310643281300" class="whatsapp-float" target="_blank" title="WhatsApp">💬</a>
+
+<!-- BACK TO TOP -->
+<button id="backToTop" onclick="scrollToTop()" title="Terug naar boven">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
